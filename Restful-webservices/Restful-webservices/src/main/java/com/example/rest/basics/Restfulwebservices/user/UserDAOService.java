@@ -28,6 +28,7 @@ public class UserDAOService {
         return user;
     }
 
+
     public User findOne(int id) {
         for (User user : userArrayList) {
             if (user.getId() == id) {

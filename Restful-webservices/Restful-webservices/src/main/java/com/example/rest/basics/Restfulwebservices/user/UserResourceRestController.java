@@ -1,6 +1,7 @@
 package com.example.rest.basics.Restfulwebservices.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,7 +19,7 @@ public class UserResourceRestController {
         return service.GetAll();
     }
     //Get Detail of specific User - GET /users/{id}
-    @GetMapping(path="/getall/{id}")
+    @GetMapping(path="/getone/{id}")
     public User findOneUser(@PathVariable int id){
       //  System.out.println("In controller");
         return service.findOne(id);
@@ -26,5 +27,8 @@ public class UserResourceRestController {
     @PostMapping("/add")
     public void createUser(@RequestBody User user){
         User saveduser=service.Save(user);
+        //CREATED
+        // /add/4
+
     }
 }
